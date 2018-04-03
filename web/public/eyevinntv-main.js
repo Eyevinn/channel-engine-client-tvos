@@ -25,7 +25,7 @@ function play(playlistName) {
 }
  
 App.onLaunch = function(options) {
-    var templateURL = 'http://localhost:8081/eyevinntv-main.html';
+    var templateURL = 'http://eyevinntv.herokuapp.com/eyevinntv-main.html';
     getDocument(templateURL);
 }
  
