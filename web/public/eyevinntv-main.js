@@ -1,3 +1,5 @@
+var fifou = 0;
+
 function getDocument(url) {
     var templateXHR = new XMLHttpRequest();
     templateXHR.responseType = "document";
@@ -23,9 +25,43 @@ function play(playlistName) {
     player.playlist.push(video);
     player.play();   
 }
+
+function updateBackgroundImage(channelName) {
+    var imgDeckElement = getActiveDocument().getElementById('background-images');
+    imgDeckElement.innerHTML = '';
+    var imageUrls = getImagesForChannel(channelName);
+    console.log("image urls....", imageUrls);
+    imageUrls.forEach(function(imageUrl) {
+        console.log('image url is ', imageUrl);
+        addImageToImageDeck(imgDeckElement, imageUrl);
+    });
+}
+
+function getImagesForChannel(channelName) {
+    var hiddenNodes = getActiveDocument().getElementById('background-images').parentNode.getElementsByTagName('hidden');
+    for (var i=0;i<hiddenNodes.length;i++) {
+        var hiddenElement = hiddenNodes.item(i);
+        console.log('ahaha', channelName, hiddenElement, hiddenElement.getAttribute('channel'), hiddenElement.channel);
+        if (hiddenElement.getAttribute('channel') == channelName) {
+            var imageUrls = [];
+            var imgElements = hiddenElement.getElementsByTagName('img');
+            for (var j=0;j<imgElements.length;j++) {
+                imageUrls.push(imgElements.item(j).getAttribute('src'));
+            }
+            return imageUrls;
+        }
+    }
+    return [];
+}
+
+function addImageToImageDeck(imageDeckElement, imageUrl) {
+    var imgElement = getActiveDocument().createElement("img");
+    imageDeckElement.appendChild(imgElement);
+    imgElement.setAttribute('src', imageUrl);
+}
  
 App.onLaunch = function(options) {
-    var templateURL = 'http://eyevinntv.herokuapp.com/eyevinntv-main.html';
+    var templateURL = 'http://localhost:5000/eyevinntv-main.html';
     getDocument(templateURL);
 }
  

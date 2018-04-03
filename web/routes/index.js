@@ -7,12 +7,15 @@ var data = {
 		{
 			"label": "Mixed",
 			"name": "random",
+			"images": ['http://localhost:5000/mixed1.png'],
 		}, {
 			"label": "Skaneby TV",
 			"name": "skaneby",
+			"images": ['http://localhost:5000/skaneby3.png'],
 		}, {
 			"label": "STSWE17",
 			"name": "stswe17",
+			"images": ['http://localhost:5000/stswe3.jpg', 'http://localhost:5000/stswe4.png'],
 		}, 
 	]
 };
@@ -30,16 +33,23 @@ function renderTemplate() {
       </header>
       <section>
          {{#each data.channels as |channel|}}
-         <listItemLockup onselect="play('{{channel.name}}')">
+         <listItemLockup onselect="play('{{channel.name}}')" onhighlight="updateBackgroundImage('{{channel.name}}')">
             <title>{{channel.label}}</title>
          </listItemLockup>
          {{/each}}
       </section>
       <relatedContent>
-         <imgDeck>
-            <img src="http://localhost:8081/rick1.jpg" />
-            <img src="http://localhost:8081/rick2.jpg" />
+         <imgDeck id="background-images">
+            <img src="http://localhost:5000/stswe1.png" />
+            <img src="http://localhost:5000/skaneby1.png" />
          </imgDeck>
+         {{#each data.channels as |channel|}}
+         <hidden channel="{{channel.name}}">
+         	{{#each channel.images as |imageUrl|}}
+            <img src="{{imageUrl}}" />
+            {{/each}}
+         </hidden>
+         {{/each}}
       </relatedContent>
    </list>
 </paradeTemplate>

@@ -48,7 +48,7 @@
 				<key>NSRequiresCertificateTransparency</key>
 				<false/>
 			</dict>
-			<key>theplatform.com</key>
+			<key>eyevinntv.herokuapp.com</key>
 			<dict>
 				<key>NSExceptionRequiresForwardSecrecy</key>
 				<false/>
