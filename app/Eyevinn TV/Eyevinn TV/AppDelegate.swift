@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, TVApplicationControllerDe
         
         //let tvBaseURL = "http://localhost:5000"
         let tvBaseURL = "https://eyevinntv.herokuapp.com"
-        let javascriptURL = NSURL(string: tvBaseURL + "/eyevinntv-main.js")
+        let javascriptURL = NSURL(string: tvBaseURL + "/javascripts/eyevinntv-main.js")
         
         appControllerContext.javaScriptApplicationURL = javascriptURL as! URL
         appControllerContext.launchOptions["BASEURL"] = tvBaseURL

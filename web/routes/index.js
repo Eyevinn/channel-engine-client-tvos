@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var handlebars = require('handlebars');
 
+//var baseUrl = "http://localhost:5000";
 var baseUrl = "https://eyevinntv.herokuapp.com";
 
 var data = {
@@ -9,15 +10,15 @@ var data = {
 		{
 			"label": "Mixed",
 			"name": "random",
-			"images": [`${baseUrl}/mixed1.png`],
+			"images": [`${baseUrl}/images/mixed1.png`],
 		}, {
 			"label": "Skaneby TV",
 			"name": "skaneby",
-			"images": [`${baseUrl}/skaneby3.png`],
+			"images": [`${baseUrl}/images/skaneby3.png`],
 		}, {
 			"label": "STSWE17",
 			"name": "stswe17",
-			"images": [`${baseUrl}/stswe3.jpg`, `${baseUrl}/stswe4.png`],
+			"images": [`${baseUrl}/images/stswe3.jpg`, `${baseUrl}/images/stswe4.png`],
 		}, 
 	]
 };
