@@ -2,12 +2,14 @@ var express = require('express');
 var router = express.Router();
 var handlebars = require('handlebars');
 
+var toto = "http://localhost:5000";
+
 var data = {
 	channels: [
 		{
 			"label": "Mixed",
 			"name": "random",
-			"images": ['http://localhost:5000/mixed1.png'],
+			"images": [`${toto}/mixed1.png`],
 		}, {
 			"label": "Skaneby TV",
 			"name": "skaneby",
@@ -29,7 +31,7 @@ function renderTemplate() {
 <paradeTemplate>
    <list>
       <header>
-         <title>Available Channels</title>
+         <title>Available Channels wxxxxx</title>
       </header>
       <section>
          {{#each data.channels as |channel|}}
@@ -40,8 +42,8 @@ function renderTemplate() {
       </section>
       <relatedContent>
          <imgDeck id="background-images">
-            <img src="http://localhost:5000/stswe1.png" />
-            <img src="http://localhost:5000/skaneby1.png" />
+            <!--img src="http://localhost:5000/stswe1.png" />
+            <img src="http://localhost:5000/skaneby1.png" /-->
          </imgDeck>
          {{#each data.channels as |channel|}}
          <hidden channel="{{channel.name}}">

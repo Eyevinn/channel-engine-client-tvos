@@ -1,4 +1,4 @@
-var fifou = 0;
+var baseUrl;
 
 function getDocument(url) {
     var templateXHR = new XMLHttpRequest();
@@ -61,7 +61,9 @@ function addImageToImageDeck(imageDeckElement, imageUrl) {
 }
  
 App.onLaunch = function(options) {
-    var templateURL = 'http://localhost:5000/eyevinntv-main.html';
+    console.log("base url??? " , options.BASEURL);
+    baseUrl = options.BASEURL;
+    var templateURL = baseUrl + '/eyevinntv-main.html';
     getDocument(templateURL);
 }
  

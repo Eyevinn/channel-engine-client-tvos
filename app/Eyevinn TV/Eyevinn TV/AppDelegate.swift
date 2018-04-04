@@ -20,10 +20,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, TVApplicationControllerDe
         
         let appControllerContext = TVApplicationControllerContext()
         
-        let javascriptURL = NSURL(string: "http://localhost:5000/eyevinntv-main.js")
+        let tvBaseURL = "http://localhost:5000"
+        let javascriptURL = NSURL(string: tvBaseURL + "/eyevinntv-main.js")
         
         appControllerContext.javaScriptApplicationURL = javascriptURL as! URL
-        //appControllerContext.launchOptions["BASEURL"] = TVBaseURL as! URL
+        appControllerContext.launchOptions["BASEURL"] = tvBaseURL
         if let options = launchOptions {
             for (kind, value) in options {
                 if let kindStr = kind as? String {
