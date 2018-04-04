@@ -13,11 +13,11 @@ var data = {
 		}, {
 			"label": "Skaneby TV",
 			"name": "skaneby",
-			"images": [`${baseUrl}:5000/skaneby3.png`],
+			"images": [`${baseUrl}/skaneby3.png`],
 		}, {
 			"label": "STSWE17",
 			"name": "stswe17",
-			"images": [`${baseUrl}:5000/stswe3.jpg`, `${baseUrl}:5000/stswe4.png`],
+			"images": [`${baseUrl}/stswe3.jpg`, `${baseUrl}/stswe4.png`],
 		}, 
 	]
 };
@@ -42,8 +42,6 @@ function renderTemplate() {
       </section>
       <relatedContent>
          <imgDeck id="background-images">
-            <!--img src="http://localhost:5000/stswe1.png" />
-            <img src="http://localhost:5000/skaneby1.png" /-->
          </imgDeck>
          {{#each data.channels as |channel|}}
          <hidden channel="{{channel.name}}">
