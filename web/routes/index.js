@@ -31,7 +31,7 @@ function renderTemplate() {
 <paradeTemplate>
    <list>
       <header>
-         <title>Available Channels wxxxxx</title>
+         <title>Available Channels</title>
       </header>
       <section>
          {{#each data.channels as |channel|}}

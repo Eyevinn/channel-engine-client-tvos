@@ -2,7 +2,13 @@
   "images" : [
     {
       "idiom" : "tv",
+      "filename" : "eyevinn-2320-720.png",
       "scale" : "1x"
+    },
+    {
+      "idiom" : "tv",
+      "filename" : "eyevinn-4640-1440.png",
+      "scale" : "2x"
     }
   ],
   "info" : {
