@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "tv",
-      "filename" : "eyevinn-400x240.png",
+      "filename" : "EyevinnTV-Icon-App-Small-400x240.png",
       "scale" : "1x"
     },
     {
       "idiom" : "tv",
-      "filename" : "eyevinn-800x480.png",
+      "filename" : "EyevinnTV-Icon-App-Small-400x240-P3@2x.png",
       "scale" : "2x"
     }
   ],
