@@ -2,23 +2,20 @@ var express = require('express');
 var router = express.Router();
 var handlebars = require('handlebars');
 
-//var baseUrl = "http://localhost:5000";
-var baseUrl = "https://eyevinntv.herokuapp.com";
-
 var data = {
 	channels: [
 		{
 			"label": "Mixed",
 			"name": "random",
-			"images": [`${baseUrl}/images/mixed1.png`],
+			"images": [`BASE_URL/images/mixed1.png`],
 		}, {
 			"label": "Skaneby TV",
 			"name": "skaneby",
-			"images": [`${baseUrl}/images/skaneby3.png`],
+			"images": [`BASE_URL/images/skaneby3.png`],
 		}, {
 			"label": "STSWE17",
 			"name": "stswe17",
-			"images": [`${baseUrl}/images/stswe3.jpg`, `${baseUrl}/images/stswe4.png`],
+			"images": [`BASE_URL/images/stswe3.jpg`, `BASE_URL/images/stswe4.png`],
 		}, 
 	]
 };
@@ -36,13 +33,16 @@ function renderTemplate() {
       </header>
       <section>
          {{#each data.channels as |channel|}}
-         <listItemLockup onselect="play('{{channel.name}}')" onhighlight="updateBackgroundImage('{{channel.name}}')">
+         <listItemLockup onselect="playChannel('{{channel.name}}')" onhighlight="updateBackgroundImage('{{channel.name}}')">
             <title>{{channel.label}}</title>
          </listItemLockup>
          {{/each}}
       </section>
       <relatedContent>
          <imgDeck id="background-images">
+         	{{#each data.channels.0.images as |imageUrl|}}
+         	<img src="{{imageUrl}}" />
+         	{{/each}}
          </imgDeck>
          {{#each data.channels as |channel|}}
          <hidden channel="{{channel.name}}">
